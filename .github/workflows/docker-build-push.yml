@@ -18,8 +18,16 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: 🏗️ Build Docker image
-        run: docker build -t balacotes/git1004-site .
+      - name: 🕓 Set tag name based on date
+        run: echo "IMAGE_TAG=$(date +%Y%m%d%H%M%S)" >> $GITHUB_ENV
 
-      - name: 🚀 Push Docker image
-        run: docker push balacotes/git1004-site
+      - name: 🏗️ Build Docker image with timestamp tag
+        run: docker build -t balacotes/git1004-site:${{ env.IMAGE_TAG }} .
+
+      - name: 🚀 Push image with timestamp tag
+        run: docker push balacotes/git1004-site:${{ env.IMAGE_TAG }}
+
+      - name: 🏷️ (Opcional) Tag image as latest too
+        run: |
+          docker tag balacotes/git1004-site:${{ env.IMAGE_TAG }} balacotes/git1004-site:latest
+          docker push balacotes/git1004-site:latest
