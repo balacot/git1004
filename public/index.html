@@ -3,14 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mi Página Web</title>
+  <title>🎯 Sitio en DockerHub Activo</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: #0d1117;
+      color: #f0f6fc;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 80px 20px;
+    }
+    h1 {
+      font-size: 3em;
+      color: #58a6ff;
+    }
+    p {
+      font-size: 1.5em;
+      margin-bottom: 30px;
+    }
+    .live-tag {
+      background: #238636;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      display: inline-block;
+    }
+  </style>
 </head>
 <body>
-  <h1>¡Hola Mundo desde GitHub Pages, con docker hub 4!</h1>
-  <p>Esta página se despliega desde la carpeta <code>public/</code> automáticamente.</p>
+  <h1>🚀 ¡DockerHub está sirviendo esta versión!</h1>
+  <p>Si ves este mensaje... <span class="live-tag">¡Todo funciona!</span></p>
+  <p>Contenido cargado desde <code>public/index.html</code></p>
   <button onclick="saludar()">Haz clic aquí</button>
 
-  <script src="script.js"></script>
+  <script>
+    function saludar() {
+      alert("Docker está funcionando ✅");
+    }
+  </script>
 </body>
 </html>
