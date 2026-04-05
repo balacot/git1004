@@ -1,3 +1,3 @@
 function saludar() {
-  alert("¡Gracias por visitar mi sitio! prueba git 2");
+  alert("¡Gracias por visitar mi sitio! Hola Aharon");
 }
